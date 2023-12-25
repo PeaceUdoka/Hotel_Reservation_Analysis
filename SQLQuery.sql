@@ -63,3 +63,45 @@ FROM HOTELRESERVATIONS
 
 -- BIVARIATE ANALYSIS
 -- impact of lead time on cancellation
+SELECT is_canceled, MIN(lead_time) AS min_lead_time,
+MAX(lead_time) AS max_lead_time,
+AVG(lead_time) AS avg_lead_time
+FROM HOTELRESERVATIONS
+GROUP BY is_canceled
+
+-- cancellations by distribution channel
+SELECT distribution_channel, COUNT(*) AS cancellations
+FROM HOTELRESERVATIONS
+WHERE is_canceled = 1 
+GROUP BY distribution_channel
+ORDER BY cancellations DESC
+
+-- cancellations by assigned room type
+SELECT assigned_room_type, COUNT(*) AS cancellations
+FROM HOTELRESERVATIONS
+WHERE is_canceled = 1 
+GROUP BY assigned_room_type
+ORDER BY cancellations DESC
+
+-- impact of number of days in waiting list
+SELECT is_canceled, AVG(days_in_waiting_list) AS avg_days_in_waiting_list
+FROM HOTELRESERVATIONS
+GROUP BY is_canceled
+
+-- impact of adr
+SELECT is_canceled, AVG(adr) AS avg_adr
+FROM HOTELRESERVATIONS
+GROUP BY is_canceled
+
+-- impact of previous cancellations 
+SELECT is_canceled, COUNT(previous_cancellations) AS previous_cancellations
+FROM HOTELRESERVATIONS
+GROUP BY is_canceled
+
+-- MULTIVARIATE ANALYSIS
+-- does assigning a different room affect cancellation
+SELECT is_canceled, COUNT(*) AS cancellations
+FROM HOTELRESERVATIONS
+WHERE reserved_room_type != assigned_room_type
+GROUP BY is_canceled
+
