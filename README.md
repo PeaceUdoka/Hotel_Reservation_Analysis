@@ -2,7 +2,7 @@
 This repository contains all deliverables on the Hotel reservation analysis project for the FliT Data Analytics/Data Science Apprenticeship Program.
 
 ## Overview
-This project involves a comprehensive analysis of hotel reservations using SQL and Tableau. The dataset used for analysis is publicly available and can be accessed on [GitHub](insert_link_to_repo).
+This project involves a comprehensive analysis of hotel reservations using SQL and Tableau. The dataset used for analysis is publicly available and can be accessed on [GitHub](https://github.com/PeaceUdoka/Hotel_Reservation_Analysis/blob/main/Hotel%20Reservation%20Analysis%20in%20SQL%20and%20Tableau.xlsx).
 
 ## Objective
 The primary objective of this project is to gain insights into hotel reservations, customer behavior, identify revenue and cancelation patterns and make useful recommendations. The analysis is conducted through SQL queries for data exploration and Tableau for visualizations.
